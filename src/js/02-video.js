@@ -12,14 +12,14 @@ player.on('timeupdate', _.throttle(savedTime, 1000));
 
 const timeStorage = parseInt(localStorage.getItem('videoplayer-current-time'));
 
-function nazwa(timeStorage) {
+function startTime(timeStorage) {
   if (timeStorage < 571) {
     return timeStorage;
   } else return timeStorage === 0;
 }
 
 player
-  .setCurrentTime(nazwa(timeStorage))
+  .setCurrentTime(startTime(timeStorage))
   .then(function (seconds) {})
   .catch(function (error) {
     switch (error.name) {
