@@ -27,6 +27,7 @@ updateData();
 form.addEventListener('submit', saveMessage);
 function saveMessage(event) {
   event.preventDefault();
+  console.log(`mail: ${email.value} message: ${message.value}`);
   form.reset();
   localStorage.clear();
 }
