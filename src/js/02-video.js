@@ -9,7 +9,7 @@ const savedTime = time => {
   localStorage.setItem('videoplayer-current-time', time.seconds);
 };
 
-player.on('timeupdate', _.throttle(savedTime, 1000));
+player.on('timeupdate', throttle(savedTime, 1000));
 
 const timeStorage = parseInt(localStorage.getItem('videoplayer-current-time'));
 
