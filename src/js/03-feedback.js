@@ -24,10 +24,12 @@ const updateData = () => {
 };
 updateData();
 
-form.addEventListener('submit', saveMessage);
-function saveMessage(event) {
+form.addEventListener('submit', event => {
   event.preventDefault();
+  if (email.value === '' || message.value === '') {
+    return;
+  }
   console.log(`mail: ${email.value} message: ${message.value}`);
   form.reset();
   localStorage.clear();
-}
+});
